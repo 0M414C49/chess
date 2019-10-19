@@ -36,24 +36,45 @@ board ="""
 |      |      |      |      |      |      |      |      |
 ---------------------------------------------------------
 """
-
+# old_pri
 alpha = ["a","b","c","d","e","f","g","h"]
-
-for i in range(0,len(alpha)+1):
+length = len(alpha)+1
+for i in range(0,length):
     # alpha_index = alpha[i]
-    for j in range(0,len(alpha)+1):
+    for j in range(0,length):
         if i<j:
             alpha_index = alpha[i]
             empty_str = ""
-            old_i = alpha_index + str(j)
-            old = old_i
+            old = alpha_index + str(j)
+            #old = old_print
             print(old)
-            new = "**"
+            new = "__"
             board = board.replace(old,new)
             #board = board.replace(str(alpha_index),empty_str)
 
+i_i = 7
+j_j = 0
+for l in range(0,length+1):
+    # alpha_index = alpha[i]
+
+    for m in range(0,length+1):
+        if i_i>j_j:
+            alpha_index_j = alpha[i_i]
+            empty_str = ""
+            old_j = alpha_index_j + str(j_j+1)
+            #old = old_print
+            print(old_j)
+            new_j = "__"
+            board = board.replace(old_j,new_j)
+            #board = board.replace(str(alpha_index),empty_str)
+            j_j = j_j + 1
+    i_i = i_i - 1
+    j_j = 0
 
 
+
+
+# print(old_print)
 
 # board = board.replace("1",a)
 print(board)
